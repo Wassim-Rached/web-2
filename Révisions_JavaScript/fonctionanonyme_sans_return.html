@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        let p=function(){
+            
+            let ch = "";
+            do{
+                n = parseInt(prompt("donner un nombre"));
+                while(n!=0 && n<=9){
+                ch = ch + n;
+                n = parseInt(prompt("donner un nombre"));
+                }
+            }while(n>9);
+            console.log(ch)
+        }
+        p();
+    </script>
+</body>
+</html>

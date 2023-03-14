@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+	<title>Les Formulaires : Checkbox </title>
+<style>
+input[type=submit]:hover, input[type=reset]:hover {
+background-color:#FCDEDE;
+}
+input[type=submit]:active, input[type=reset]:active {
+background-color:#FCDEDE;
+box-shadow:1px 1px 1px #D83F3D inset;
+}
+
+</style>	
+</head>
+<body>
+	<script>
+		function afficher(){
+			with(window.document.f){
+				var liste="";
+				for(var i=0; i < food1.length; i++){
+					if(food1[i].checked){
+					alert("l'element selectionné est:"+ food1[i].value);
+					alert("l'indice de l'element est: "+ i)
+				}
+				}
+				
+			}
+		}
+	</script>
+<form  action="Checkbox.html" method="get" name="f">
+<input type="checkbox" name="food1" value="hotdogs" checked /> Le hotdog est mon plat préféré <br/>
+<input type="checkbox" name="food1" value="hamburgers" /> J'aime les hamburgers <br/>
+<input type="checkbox" name="food1" value="steak" checked /> Les steaks ont du goût <br/>
+<input type="checkbox" name="food1" value="beans" /> Les haricots sont pour les végétariens <br/> 
+
+<input type="submit" value="envoyer" onclick="afficher()" />
+</form>
+</body>
+</html>

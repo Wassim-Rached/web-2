@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      table {
+        margin: auto;
+      }
+      table,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: solid 1px black;
+      }
+      td {
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("nb etudiant: ", "0"));
+      let t = [];
+      let i = 0;
+      while (i < n) {
+        t[i] = parseFloat(prompt("donner la moyenne", "0"));
+
+        i = i + 1;
+      }
+      function maxx() {
+        max = t[0];
+        for (v of t) {
+          if (max < v) {
+            max = v;
+          }
+        }
+        return max;
+      }
+      function minn() {
+        min = t[0];
+        for (v of t) {
+          if (min > v) {
+            min = v;
+          }
+        }
+        return min;
+      }
+      function moy() {
+        let m = 0;
+        for (v of t) {
+          m = m + v;
+        }
+        return m / n;
+      }
+      document.write(`<table>
+            <thead>
+            <tr><td>le nombre d'etudiants</td>
+            <td>${n}</td>
+            </tr>
+            </thead>
+            <tbody>        <tr><td>la liste des notes </td>
+            <td>`);
+      for (v in t) {
+        document.write(`${v}.${t[v]}</br>`);
+      }
+      document.write(` </td> </tr>`);
+      document.write(`
+            <tr><td>la moyenne generale</td>
+            <td><span id="i1">${moy()}</span></td></tr>
+            <tr><td>la meilleure note est</td>
+            <td><span id="i2">${maxx()}</span></td></tr>
+            <tr><td>la mauvaise note est </td>
+            <td><span id="i3">${minn()}</span></td></tr></tbody></table>
+            `);
+    </script>
+  </body>
+</html>

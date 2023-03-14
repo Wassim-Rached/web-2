@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        let p=function(){
+            let n = parseInt(prompt("donner un nombre","1"));
+            let ch = "";
+            while(n!=0){
+                ch = ch + n;
+                n = parseInt(prompt("donner un nombre"));
+            }
+            console.log(ch)
+        }
+        p();
+    </script>
+</body>
+</html>

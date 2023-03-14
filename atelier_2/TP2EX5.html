@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+      function afficher(valeur) {
+        f1.lstTI.hidden = !valeur;
+        f1.txtTI.hidden = !valeur;
+      }
+
+      function soumettre() {}
+
+      function afficherParcours() {
+        let select_value = f1.lstTI.options[f1.lstTI.selectedIndex].value;
+        f1.txtTI.value = select_value;
+      }
+
+      function test() {
+        if (f1.txtNomPrenom.value == "") {
+          f1.txtNomPrenom.style.backgroundColor = "red";
+          f1.txtNomPrenom.focus();
+          f1.txtNomPrenom.onfocusout;
+        } else {
+          f1.txtNomPrenom.style.backgroundColor = "white";
+        }
+      }
+    </script>
+    <h2>Inscription</h2>
+    <form name="f1" action="" method="get">
+      <fieldset>
+        <legend>Informations Personnelles</legend>
+        <label>Nom et prénom</label>
+        <input type="text" onmouseout="test()" required name="txtNomPrenom" />
+        <br />
+        <label>Choix du département</label>
+        <input
+          type="radio"
+          name="optDep"
+          value="TI"
+          onchange="afficher(this.checked)"
+        />TI
+        <input
+          type="radio"
+          name="optDep"
+          value="SEG"
+          checked
+          onchange="afficher(!this.checked)"
+        />SEG <br />
+        <select name="lstTI" onchange="afficherParcours()" hidden>
+          <option value="SEM" />
+          SEM
+          <option value="DSI" />
+          DSI
+          <option value="RSI" />
+          RSI
+        </select>
+        <input type="text" name="txtTI" value="SEM" hidden /><br />
+        <input type="submit" value="Valider" />
+        <input type="reset" value="Effacer" />
+      </fieldset>
+    </form>
+  </body>
+</html>
